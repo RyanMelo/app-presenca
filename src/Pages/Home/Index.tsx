@@ -2,14 +2,27 @@ import { useState } from "react"
 import { Card } from "../../Components/Card"
 import "./Style.css"
 
+interface Pessoa {
+  name: string;
+  time: string;
+}
+
 export function Home() {
 
+  var date = new Date();
+  var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
   const [name, setName] = useState<string>("");
-  const [listNames, setListNames] = useState<string[]>([]);
+  const [listPessoas, setlistPessoas] = useState<Pessoa[]>([]);
 
   function addLista() {
-    listNames.push(name);
-    console.log(listNames);
+    listPessoas.push(
+      {
+        name: name,
+        time: time,
+      }
+    );
+    console.log(listPessoas);
     setName("");
   }
   
@@ -22,8 +35,8 @@ export function Home() {
       <div className="w-1/2 bg-slate-300 h-1 rounded-md mb-5"></div>
 
       <>
-        {listNames.map((name) => {
-          return <Card name={name}/>
+        {listPessoas.map(pessoa => {
+          return <Card name={pessoa.name} time={pessoa.time}/>
         })}
       </>
 
