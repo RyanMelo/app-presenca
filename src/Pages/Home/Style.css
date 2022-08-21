@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-name {
+    @apply px-10 py-4 bg-slate-100 outline-0 border-slate-200 border-2 rounded-md w-1/2 mb-5;
+}
+
+.buttom-add {
+    @apply w-1/2 bg-cyan-600 text-white px-10 py-3 rounded-md mb-5 transition duration-150 hover:bg-cyan-400 hover:ease-in-out
+}
