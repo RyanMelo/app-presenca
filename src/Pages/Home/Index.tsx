@@ -28,7 +28,7 @@ export function Home() {
   
   return (
     <div className="flex flex-col justify-center items-center mx-auto my-10">
-      <h1 className="text-2xl mb-5 font-semibold text-cyan-600">Lista de Presença</h1>
+      <h1 className="text-2xl mb-5 font-semibold text-cyan-500">Lista de Presença</h1>
       <input type="text" placeholder="Nome" className="input-name" value={name} onChange={(e) => setName(e.target.value)}/>
       <button className="buttom-add" onClick={addLista}>Adicionar</button>
 
